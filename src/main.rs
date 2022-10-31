@@ -17,7 +17,10 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Create a new Client which is re-used between requests
     let client = reqwest::Client::new();
 
-    // other logics to be added
+    // Making a GET Request
+    let response_200 = client.get("https://httpbin.org/ip").header(CONTENT_TYPE, "application/json").send().await?.json::<GETAPIResponse>().await?;
+
+    println!("{:#?}", response_200);
 
     Ok(())
 }
