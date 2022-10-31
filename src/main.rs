@@ -36,9 +36,31 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     map.insert("body", "json");
 
     // Making a POST Request
-    let response_json = client.post("https://httpbin.org/anything").json(&map).send().await?.json::<JSONResponse>().await?;
+    let response_json = client
+        .post("https://httpbin.org/anything")
+        .json(&map)
+        .send()
+        .await?
+        .json::<JSONResponse>()
+        .await?;
 
     println!("{:#?}", response_json);
+
+    // Handling other HTTP status codes : 404
+    let response_404 = client.get("https://httpbin.org/status/404").send().await?;
+
+    // Matching the HTTP status code of the request
+    match response_404.status() {
+        reqwest::StatusCode::OK => {
+            println!("Success!");
+        }
+        reqwest::StatusCode::NOT_FOUND => {
+            println!("Got 404! Haven't found resource!");
+        }
+        _ => {
+            panic!("Okay... this shouldn't happen...");
+        }
+    };
 
     Ok(())
 }
