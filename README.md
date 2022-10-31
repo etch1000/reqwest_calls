@@ -8,7 +8,7 @@
 - Handling different HTTP status codes
 
 ###### GETAPIResponse
-GETAPIResponse is handling the first GET request with 200 (OK) HTTP status code, and we can see the output for it as :
+GETAPIResponse is handling the first GET request with 200 (OK) HTTP status code, and we can see the output for it as:
 
 ```
 GETAPIResponse {
@@ -17,7 +17,7 @@ GETAPIResponse {
 ```
 
 ###### JSONResponse
-JSONResponse shows the response of a POST request with status code 201 (CREATED), and we can see the output for it as :
+JSONResponse shows the response of a POST request with status code 201 (CREATED), and we can see the output for it as:
 
 ```
 JSONResponse {
@@ -28,7 +28,7 @@ JSONResponse {
 }
 ```
 
-###### Handling other HTTP Status codes : 404 (NOT_FOUND), and we can see the output for it as :
+###### Handling other HTTP Status codes : 404 (NOT_FOUND), and we can see the output for it as:
 
 ```
 Got 404! Haven't found resource!
