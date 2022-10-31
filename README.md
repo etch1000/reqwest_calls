@@ -28,7 +28,8 @@ JSONResponse {
 }
 ```
 
-###### Handling other HTTP Status codes : 404 (NOT_FOUND), and we can see the output for it as:
+###### Handling other HTTP Status codes 
+Handling other HTTP Status codes : 404 (NOT_FOUND), and we can see the output for it as:
 
 ```
 Got 404! Haven't found resource!
